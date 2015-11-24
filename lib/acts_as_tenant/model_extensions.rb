@@ -60,7 +60,7 @@ module ActsAsTenant
           if ActsAsTenant.current_tenant
             where(fkey.to_sym => ActsAsTenant.current_tenant.id)
           else
-            all
+            scoped
           end
         }
 
